@@ -18,14 +18,21 @@ export default component$(() => {
       <p>Hello, {name.value}</p>
       <p>Hello, {person.name} - {person.age}</p>
 
-      <button onClick$={() => name.value = "Mario"}>Click me</button> {/*click event listener*/}
-      <button onClick$={() => person.name = "Bowser"}>Click me again</button>
+      {/*click event listener*/}
+      <button onClick$={() => name.value = "Mario"} class="bg-amber-500 border-0 border-none py-2 px-2.5 my-4 mr-5 rounded text-white cursor-pointer font-poppins">
+        Click me
+      </button>
+      <button onClick$={() => person.name = "Bowser"} class="bg-amber-500 border-0 border-none py-2 px-2.5 my-4 rounded text-white cursor-pointer font-poppins">
+        Click me again
+      </button>
 
       {blogs.map(blog => (
         <div key={blog.id}>{blog.title}</div>
       ))}
 
-      <button onClick$={() => blogs.pop()}>Remove blog</button>
+      <button onClick$={() => blogs.pop()} class="bg-amber-500 border-0 border-none py-2 px-2.5 mt-4 rounded text-white cursor-pointer font-poppins">
+        Remove blog
+      </button>
     </article>
   )
 });
