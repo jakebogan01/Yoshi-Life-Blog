@@ -21,7 +21,7 @@ export default component$(() => {
       </article>
 
       {modalVisible.value && (
-        <Modal>
+        <Modal size="lg" frosted={true}> {/*adds the prop size form modal*/}
           {/*output multiple slots from modal*/}
           <div q:slot="content">
             <h2 class="font-geo font-bold m-0 text-[1.8em]">Great News!!!</h2>
