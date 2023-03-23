@@ -12,3 +12,7 @@
 .modal {
     background-color: rgba(0, 0, 0, 0.2);
 }
+.close {
+    background-color: #F49E07;
+    color: white;
+}

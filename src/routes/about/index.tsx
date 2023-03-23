@@ -1,4 +1,4 @@
-import { component$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useSignal, useStylesScoped$, $ } from "@builder.io/qwik";
 import AboutStyles from "./about.css?inline";
 import Modal from "~/components/modal/modal";
 
@@ -6,6 +6,10 @@ export default component$(() => {
   useStylesScoped$(AboutStyles)
 
   const modalVisible = useSignal(false)
+
+  const closeModal = $(() => { /*turns function into string to be serialized*/
+    modalVisible.value = false
+  })
 
   return (
     <>
@@ -21,7 +25,7 @@ export default component$(() => {
       </article>
 
       {modalVisible.value && (
-        <Modal size="lg" frosted={true}> {/*adds the prop size form modal*/}
+        <Modal size="lg" frosted={true} close={closeModal}> {/*adds the prop size and frosted from modal, adds function prop*/}
           {/*output multiple slots from modal*/}
           <div q:slot="content">
             <h2 class="font-geo font-bold m-0 text-[1.8em]">Great News!!!</h2>
